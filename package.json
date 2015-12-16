@@ -1,0 +1,23 @@
+{
+  "name": "text-based-story",
+  "version": "0.1.0",
+  "description": "an atmospheric story adventure!",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akeogh/text-based-story.git"
+  },
+  "author": "amanda.keogh@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akeogh/text-based-story/issues"
+  },
+  "homepage": "https://github.com/akeogh/text-based-story#readme"
+}
