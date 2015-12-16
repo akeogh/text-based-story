@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/akeogh/text-based-story/issues"
   },
-  "homepage": "https://github.com/akeogh/text-based-story#readme"
+  "homepage": "https://github.com/akeogh/text-based-story#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.3.1"
+  }
 }
