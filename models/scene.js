@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+'use strict';
 
-var sceneSchema = Schema({
+var mongoose = require('mongoose');
+
+var sceneSchema = new mongoose.Schema({
   title: String,
   content: [String],
   choices: [{
