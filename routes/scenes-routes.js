@@ -21,7 +21,6 @@ scenesRouter.post('/scenes', bodyParser.json(), function(req, res) {
   newScene.save(function(err, data) {
     if (err) return handleError(err, res);
 
-    timeAdded();
     res.json(data);
   });
 });
