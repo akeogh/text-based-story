@@ -4,7 +4,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Scene = require(__dirname + '/../models/scene');
 var handleError = require(__dirname + '/../lib/handle-server-error');
-var timeAdded = require(__dirname + '/../lib/time-added');
 
 var scenesRouter = module.exports = exports = express.Router();
 
