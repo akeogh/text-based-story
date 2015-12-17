@@ -16,6 +16,14 @@ scenesRouter.get('/scenes', function(req, res) {
   });
 });
 
+scenesRouter.get('/scenes/:id', function(req, res) {
+  Scene.find({_id: req.params.id}, function(err, data) {
+    if (err) return handleError(err, res);
+
+    res.json(data);
+  })
+})
+
 scenesRouter.post('/scenes', bodyParser.json(), function(req, res) {
   var newScene = new Scene(req.body);
   newScene.save(function(err, data) {
