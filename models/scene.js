@@ -7,7 +7,7 @@ var sceneSchema = new mongoose.Schema({
   content: [String],
   choices: [{
     sceneId: String,
-    displayText: String,
+    displayText: String
   }]
 });
 
