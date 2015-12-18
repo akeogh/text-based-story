@@ -5,10 +5,10 @@ module.exports = function(app) {
     $scope.errors = [];
     $scope.newScene = {};
     var scenesResource = sceneResource('scenes');
-    var currentScene = {};
+    $scope.currentScene = {};
 
     $scope.getAll = function() {
-      scenesResource.create(scene, function(err, data) {
+      scenesResource.getAll(function(err, data) {
         if (err) return err;
 
         $scope.scenes = data;
@@ -48,7 +48,7 @@ module.exports = function(app) {
     $scope.reset = function(scene) {
       var tempScene = $scope.currentScene[scene._id];
 
-      $scope.scene = angular.copy($scope.msater);
+      $scope.scene = angular.copy($scope.master);
       scene.content = tempScene.content;
       scene.editing = false;
     };
