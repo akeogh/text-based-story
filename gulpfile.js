@@ -12,7 +12,7 @@ var appFiles = ['server.js', __dirname + '/routes/**/*.js',
                 ];
 
 var testFiles = [__dirname + '/test/**/*.js'];
-var htmlFiles = [__dirname + 'app/**/*.html'];
+var htmlFiles = [__dirname + '/app/**/*.html'];
 
 /* * * * * * * * * * * * * * * * * *
             BUILD TASKS

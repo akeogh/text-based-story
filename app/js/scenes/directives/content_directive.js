@@ -3,9 +3,9 @@ module.exports = exports = function(app) {
     return {
       restrict: 'AEC',
       replace: 'true',
-      template: '/templates/content_template',
+      templateUrl: '/templates/content_template.html',
       scope: {
-        choices: '@'
+        content: '='
       }
     }
   });

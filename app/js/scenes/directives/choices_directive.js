@@ -3,7 +3,7 @@ module.exports = exports = function(app) {
     return {
       restrict: 'AEC',
       replace: 'true',
-      template: '/templates/choices_template',
+      templateUrl: '/templates/choices_template.html',
       scope: {
         content: '@'
       }
