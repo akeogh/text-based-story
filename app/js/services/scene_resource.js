@@ -15,7 +15,7 @@ var handleFail = function(callback) {
 module.exports = function(app) {
   app.factory('sceneResource', ['$http', function($http) {
     return function(resourceName) {
-      var resource = {}
+      var resource = {};
 
       resource.getAll = function(callback) {
         $http.get('/api/' + resourceName)
