@@ -1,3 +1,5 @@
+'use strict';
+
 var angular = window.angular;
 module.exports = function(app) {
   app.controller('ScenesController', ['$scope', '$http', 'sceneResource', function($scope, $http, sceneResource) {
@@ -6,6 +8,7 @@ module.exports = function(app) {
     $scope.newScene = {};
     var scenesResource = sceneResource('scenes');
     $scope.currentScene = {};
+    $scope.content = ['1', '2'];
 
     $scope.getAll = function() {
       scenesResource.getAll(function(err, data) {
