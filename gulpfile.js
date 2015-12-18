@@ -60,6 +60,14 @@ gulp.task('webpack:test', function() {
             WATCH TASKS
  * * * * * * * * * * * * * * * * * */
 
+gulp.task('watch:build', function() {
+  gulp.watch(htmlFiles, ['static:dev']);
+  gulp.watch('app/**/*.js', ['webpack:dev']);
+  gulp.watch('test/client/**/*.js', ['webpack:test']);
+});
+
  /* * * * * * * * * * * * * * * * * *
               DEFAULT
  * * * * * * * * * * * * * * * * * */
+
+ gulp.task('default', ['watch:build']);
