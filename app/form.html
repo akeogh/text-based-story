@@ -23,11 +23,15 @@
 
       <!-- New List Item Form -->
       <form name="newSceneForm" data-ng-submit="create(newScene)">
-        <input type="text" id="newSceneContent" placeholder="Add a new scene" require data-ng-model="newScene.content">
+        <input type="text" id="newSceneTitle" placeholder="Add a new title" require data-ng-model="newScene.title">
+        <input type="text" id="newSceneContent" placeholder="Add content" require data-ng-model="newScene.content">
+
         <button type="submit" data-ng-disabled="newSceneForm.$invalid">
           <i class="fa fa-plus"></i>
         </button>
       </form>
+
+
 
       <!-- Generate Items -->
       <ul id="sceneList">
@@ -59,18 +63,30 @@
 
             <label for="sceneForm{{scene._id}}">New Title:</label>
             <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
+            <br>
 
-            <label for="sceneForm{{scene._id}}">New Content:</label>
-            <textarea id="sceneForm{{scene._id}}" required data-ng-model="scene.content"></textarea>
+            <ul>
+              <li data-ng-repeat="content in scene.content">
+                <label for="sceneForm{{scene._id}}">New Content:</label>
+                <textarea id="sceneForm{{scene._id}}" required data-ng-model="content"></textarea>
+              </li>
+            </ul>
 
+
+            <br>
             <label for="sceneForm{{scene._id}}">New Scene ID:</label>
             <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.choices[0].sceneId"/>
-
+            <br>
             <label for="sceneForm{{scene._id}}">New Choice:</label>
             <textarea id="sceneForm{{scene._id}}" required data-ng-model="scene.choices[0].displayText"></textarea>
-
+            <br>
+            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
+            <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.choices[1].sceneId"/>
+            <br>
+            <label for="sceneForm{{scene._id}}">New Choice:</label>
+            <textarea id="sceneForm{{scene._id}}" required data-ng-model="scene.choices[1].displayText"></textarea>
+            <br>
             <button type="submit">OK</button>
-
             <button ng-click="reset(scene)">Cancel</button>
           </form>
         </li>
