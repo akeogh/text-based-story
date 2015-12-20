@@ -24,12 +24,9 @@
         <br>
         <input type="text" placeholder="Add new choice" require data-ng-model="newScene.choices[0].displayText">
 
-
-        <button type="submit" data-ng-disabled="newSceneForm.$invalid">Add New Story</button>
-
-<!--         <button type="submit" data-ng-disabled="newSceneForm.$invalid">
+        <button type="submit" data-ng-disabled="newSceneForm.$invalid">
           <i class="fa fa-plus"></i>
-        </button> -->
+        </button>
       </form>
 
 
@@ -73,11 +70,10 @@
             <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
             <br>
 
-
+            <h4>Content</h4>
             <!-- REPEAT CONTENT IN EDIT FORM -->
             <ul>
               <li data-ng-repeat="content in scene.content">
-                <label for="sceneForm{{scene._id}}">New Content:</label>
                 <textarea id="sceneForm{{scene._id}}" required data-ng-model="content"></textarea>
               </li>
             </ul>
@@ -85,12 +81,25 @@
 
             <!-- REPEAT CHOICES IN EDIT FORM -->
             <ul>
-              <li>
-                <label for="sceneForm{{scene._id}}">Edit choices</label>
-                <text id="sceneForm{{scene._id}}" data-ng-model=""></text>
+              <li data-ng-repeat="choices in scene.choices">
+                <ul>
+                  <li data-ng-repeat="items in choices">
+                    <text id="sceneForm{{scene._id}}" data-ng-model="items"></text>
+                  </li>
+                </ul>
               </li>
             </ul>
 
+            <!-- model -->
+            <ul>
+              <h4>Choices</h4>
+              <li data-ng-repeat="choices in scene.choices">
+                ---
+                <ul>
+                  <li data-ng-repeat="items in choices">{{items}}</li>
+                </ul>
+              </li>
+            </ul>
 
 <!--             <br>
             <label for="sceneForm{{scene._id}}">New Scene ID:</label>
