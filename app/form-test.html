@@ -29,131 +29,57 @@
         </button>
       </form> -->
 
-
-
-      <!-- Generate Items -->
       <ul id="sceneList">
-
-        <!-- Start li -->
         <li data-ng-repeat="scene in scenes">
-          {{scene.title}} ID: {{scene._id}}
-          <br>
-
+          <span>{{scene.title}} ID: {{scene._id}}</span>
           <ul>
             <h4>Content</h4>
             <li data-ng-repeat="content in scene.content">{{content}}</li>
-          </ul>
 
-          <ul>
             <h4>Choices</h4>
             <li data-ng-repeat="choices in scene.choices">
-              ---
               <ul>
                 <li data-ng-repeat="items in choices">{{items}}</li>
               </ul>
             </li>
+
+            <!-- BUTTONS -->
+            <button data-ng-if="!scene.editing" data-ng-click="remove(scene)">
+              <i class="fa fa-trash"></i>
+            </button>
+
+            <button data-ng-if="!scene.editing" data-ng-click="save(scene)">
+              <i class="fa fa-pencil"></i>
+            </button>
+
+            <!-- Editing -->
+            <form name="sceneForm{{scene._id}}" data-ng-submit="update(scene)" data-ng-if="scene.editing">
+
+              <h4>------ Edit ------</h4>
+
+              <h5>Title</h5>
+              <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
+              <br>
+
+              <h5>Edit Content</h5>
+              <li data-ng-repeat="item in scene.content">
+                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="item"></input>
+              </li>
+
+              <h5>Edit Choices</h5>
+              <li data-ng-repeat="choice in scene.choices">
+                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="choice.sceneId"></input>
+                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="choice.displayText"></input>
+              </li>
+
+              <!-- OK/CANCEL -->
+              <button type="submit">OK</button>
+              <button ng-click="reset(scene)">Cancel</button>
+            </form>
           </ul>
-
-          <!-- BUTTONS -->
-          <button data-ng-if="!scene.editing" data-ng-click="remove(scene)">
-            <i class="fa fa-trash"></i>
-          </button>
-
-          <button data-ng-if="!scene.editing" data-ng-click="save(scene)">
-            <i class="fa fa-pencil"></i>
-          </button>
-
-          <h1>-----------------</h1>
-
-
-          <!-- Make changes to scene list -->
-          <form name="sceneForm{{scene._id}}" data-ng-submit="update(scene)" data-ng-if="scene.editing">
-
-            <label for="sceneForm{{scene._id}}">New Title:</label>
-            <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
-            <br>
-
-            <h4>Content</h4>
-
-            <br>
-            <label for="sceneForm{{scene._id}}">New Content:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[0]"></textarea>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Content:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[1]"></textarea>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Content:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[2]"></textarea>
-            <br>
-
-            <h4>Choices</h4>
-
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].displayText"></textarea>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].displayText"></textarea>
-            <br>
-
-
-
-            <!-- REPEAT CONTENT IN EDIT FORM -->
-<!--             <ul>
-              <li data-ng-repeat="scene in scenes">
-                <ul>
-                  <li data-ng-repeat="content in scene.content">
-                    <input type="text" data-ng-model="content"></input>
-                  </li>
-                </ul>
-              </li>
-            </ul> -->
-<!--         <ul>
-              <li data-ng-repeat="content in scene.content">
-                <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.content">
-              </li>
-            </ul> -->
-
-
-            <!-- REPEAT CHOICES IN EDIT FORM -->
-<!--             <ul>
-              <li data-ng-repeat="choices in scene.choices">
-                <ul>
-                  <li data-ng-repeat="items in choices">
-                    <text id="sceneForm{{scene._id}}" data-ng-model="items"></text>
-                  </li>
-                </ul>
-              </li>
-            </ul> -->
-
-<!--             <br>
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].displayText"></textarea>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].displayText"></textarea>
-            <br> -->
-
-
-            <!-- OK/CANCEL -->
-            <button type="submit">OK</button>
-            <button ng-click="reset(scene)">Cancel</button>
-          </form>
         </li>
-        <!-- End li -->
-
       </ul>
+
     </main>
   <!-- end content -->
   </div>
