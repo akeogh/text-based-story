@@ -15,6 +15,22 @@
     <h1 id="logo">Scenes</h1>
     <main data-ng-controller="ScenesController" data-ng-init="getAll()">
 
+      <!-- New List Item Form -->
+<!--       <h3>New Scene</h3>
+      <form name="newSceneForm" data-ng-submit="create(newScene)">
+        <input type="text" id="newSceneTitle" placeholder="Add a new title" require data-ng-model="newScene.title">
+        <br>
+        <input type="text" id="newSceneContent" placeholder="Add content" require data-ng-model="newScene.content">
+        <br>
+        <input type="text" placeholder="Add new choice" require data-ng-model="newScene.choices[0].displayText">
+
+        <button type="submit" data-ng-disabled="newSceneForm.$invalid">
+          <i class="fa fa-plus"></i>
+        </button>
+      </form> -->
+
+
+
       <!-- Generate Items -->
       <ul id="sceneList">
 
@@ -47,10 +63,11 @@
             <i class="fa fa-pencil"></i>
           </button>
 
+          <h1>-----------------</h1>
+
+
           <!-- Make changes to scene list -->
           <form name="sceneForm{{scene._id}}" data-ng-submit="update(scene)" data-ng-if="scene.editing">
-
-            <h1>-------- Edit --------</h1>
 
             <label for="sceneForm{{scene._id}}">New Title:</label>
             <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
@@ -84,11 +101,54 @@
             <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].displayText"></textarea>
             <br>
 
+
+
+            <!-- REPEAT CONTENT IN EDIT FORM -->
+<!--             <ul>
+              <li data-ng-repeat="scene in scenes">
+                <ul>
+                  <li data-ng-repeat="content in scene.content">
+                    <input type="text" data-ng-model="content"></input>
+                  </li>
+                </ul>
+              </li>
+            </ul> -->
+<!--         <ul>
+              <li data-ng-repeat="content in scene.content">
+                <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.content">
+              </li>
+            </ul> -->
+
+
+            <!-- REPEAT CHOICES IN EDIT FORM -->
+<!--             <ul>
+              <li data-ng-repeat="choices in scene.choices">
+                <ul>
+                  <li data-ng-repeat="items in choices">
+                    <text id="sceneForm{{scene._id}}" data-ng-model="items"></text>
+                  </li>
+                </ul>
+              </li>
+            </ul> -->
+
+<!--             <br>
+            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
+            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].sceneId"/>
+            <br>
+            <label for="sceneForm{{scene._id}}">New Choice:</label>
+            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].displayText"></textarea>
+            <br>
+            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
+            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].sceneId"/>
+            <br>
+            <label for="sceneForm{{scene._id}}">New Choice:</label>
+            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].displayText"></textarea>
+            <br> -->
+
+
             <!-- OK/CANCEL -->
             <button type="submit">OK</button>
             <button ng-click="reset(scene)">Cancel</button>
-
-            <h1>----- End Edit -----</h1>
           </form>
         </li>
         <!-- End li -->
