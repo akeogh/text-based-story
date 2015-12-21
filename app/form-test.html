@@ -58,18 +58,19 @@
               <h4>------ Edit ------</h4>
 
               <h5>Title</h5>
-              <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
+              <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"></input>
               <br>
 
               <h5>Edit Content</h5>
-              <li data-ng-repeat="item in scene.content">
-                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="item"></input>
+              <li data-ng-repeat="line in scene.content">
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="line"></input>
               </li>
+              <br>
 
               <h5>Edit Choices</h5>
               <li data-ng-repeat="choice in scene.choices">
-                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="choice.sceneId"></input>
-                <input type="text" id="sceneForm{{scene_.id}}" data-ng-model="choice.displayText"></input>
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.sceneId"></input>
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.displayText"></input>
               </li>
 
               <!-- OK/CANCEL -->
