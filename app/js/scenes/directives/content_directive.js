@@ -5,7 +5,7 @@ module.exports = exports = function(app) {
       replace: 'true',
       templateUrl: '/templates/content_template.html',
       scope: {
-        content: '='
+        content: '=',
       }
     }
   });

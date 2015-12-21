@@ -13,6 +13,7 @@
 
 </head>
 <body data-ng-app="SceneApp" data-ng-controller="ScenesController">
-  <content-directive data-content="content"></content>
+  <content-directive data-content="content" data-choices="choices"></content-directive>
+  <choices-directive data-choices="choices" data-get-content="getContent(id)"></choices-directive>
   <script src="bundle.js"></script>
 </body>

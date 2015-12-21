@@ -5,7 +5,8 @@ module.exports = exports = function(app) {
       replace: 'true',
       templateUrl: '/templates/choices_template.html',
       scope: {
-        content: '@'
+        choices: '=',
+        getContent: '&'
       }
     }
   });
