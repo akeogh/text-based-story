@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 
 var sceneSchema = new mongoose.Schema({
   title: String,
-  content: [String],
+  content: [{
+    sceneContent: String
+  }],
   choices: [{
     sceneId: String,
     displayText: String

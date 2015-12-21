@@ -16,7 +16,7 @@
     <main data-ng-controller="ScenesController" data-ng-init="getAll()">
 
       <!-- New List Item Form -->
-<!--       <h3>New Scene</h3>
+      <h3>New Scene</h3>
       <form name="newSceneForm" data-ng-submit="create(newScene)">
         <input type="text" id="newSceneTitle" placeholder="Add a new title" require data-ng-model="newScene.title">
         <br>
@@ -27,8 +27,9 @@
         <button type="submit" data-ng-disabled="newSceneForm.$invalid">
           <i class="fa fa-plus"></i>
         </button>
-      </form> -->
+      </form>
 
+      <!-- Scene List -->
       <ul id="sceneList">
         <li data-ng-repeat="scene in scenes">
           <span>{{scene.title}} ID: {{scene._id}}</span>
