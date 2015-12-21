@@ -15,84 +15,77 @@
     <h1 id="logo">Scenes</h1>
     <main data-ng-controller="ScenesController" data-ng-init="getAll()">
 
-      <!-- Generate Items -->
+      <!-- New List Item Form -->
+      <h3>New Scene</h3>
+      <form name="newSceneForm" data-ng-submit="create(newScene)">
+        <input type="text" id="newSceneTitle" placeholder="Add a new title" require data-ng-model="newScene.title">
+        <br>
+        <input type="text" id="newSceneContent" placeholder="Add content" require data-ng-model="newScene.content">
+        <br>
+        <input type="text" placeholder="Add new choice" require data-ng-model="newScene.choices[0].displayText">
+
+        <button type="submit" data-ng-disabled="newSceneForm.$invalid">
+          <i class="fa fa-plus"></i>
+        </button>
+      </form>
+
+      <!-- Scene List -->
       <ul id="sceneList">
-
-        <!-- Start li -->
         <li data-ng-repeat="scene in scenes">
-          {{scene.title}} ID: {{scene._id}}
-          <br>
-
+          <span>{{scene.title}} ID: {{scene._id}}</span>
           <ul>
             <h4>Content</h4>
-            <li data-ng-repeat="content in scene.content">{{content}}</li>
-          </ul>
+            <li data-ng-repeat="content in scene.content">
+              <ul>
+                <li data-ng-repeat="sceneContent in content">{{sceneContent}}</li>
+              </ul>
+            </li>
 
-          <ul>
             <h4>Choices</h4>
             <li data-ng-repeat="choices in scene.choices">
-              ---
               <ul>
                 <li data-ng-repeat="items in choices">{{items}}</li>
               </ul>
             </li>
+
+            <!-- BUTTONS -->
+            <button data-ng-if="!scene.editing" data-ng-click="remove(scene)">
+              <i class="fa fa-trash"></i>
+            </button>
+
+            <button data-ng-if="!scene.editing" data-ng-click="save(scene)">
+              <i class="fa fa-pencil"></i>
+            </button>
+
+            <!-- Editing -->
+            <form name="sceneForm{{scene._id}}" data-ng-submit="update(scene)" data-ng-if="scene.editing">
+
+              <h4>------ Edit ------</h4>
+
+              <h5>Title</h5>
+              <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"></input>
+              <br>
+
+              <h5>Edit Content</h5>
+              <li data-ng-repeat="line in scene.content">
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="line.sceneContent"></input>
+              </li>
+              <br>
+
+              <h5>Edit Choices</h5>
+              <li data-ng-repeat="choice in scene.choices">
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.sceneId"></input>
+                <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.displayText"></input>
+              </li>
+
+              <!-- OK/CANCEL -->
+              <button type="submit">OK</button>
+              <button ng-click="reset(scene)">Cancel</button>
+            </form>
           </ul>
-
-          <!-- BUTTONS -->
-          <button data-ng-if="!scene.editing" data-ng-click="remove(scene)">
-            <i class="fa fa-trash"></i>
-          </button>
-
-          <button data-ng-if="!scene.editing" data-ng-click="save(scene)">
-            <i class="fa fa-pencil"></i>
-          </button>
-
-          <!-- Make changes to scene list -->
-          <form name="sceneForm{{scene._id}}" data-ng-submit="update(scene)" data-ng-if="scene.editing">
-
-            <h1>-------- Edit --------</h1>
-
-            <label for="sceneForm{{scene._id}}">New Title:</label>
-            <input type="text" id="sceneForm{{scene._id}}" required data-ng-model="scene.title"/>
-            <br>
-
-            <h4>Content</h4>
-
-            <br>
-            <label for="sceneForm{{scene._id}}">New Content:</label>
-            <br>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[0]"></textarea>
-            <br>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[1]"></textarea>
-            <br>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.content[2]"></textarea>
-            <br>
-
-            <h4>Choices</h4>
-
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[0].displayText"></textarea>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Scene ID:</label>
-            <input type="text" id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].sceneId"/>
-            <br>
-            <label for="sceneForm{{scene._id}}">New Choice:</label>
-            <textarea id="sceneForm{{scene._id}}" data-ng-model="scene.choices[1].displayText"></textarea>
-            <br>
-
-            <!-- OK/CANCEL -->
-            <button type="submit">OK</button>
-            <button ng-click="reset(scene)">Cancel</button>
-
-            <h1>----- End Edit -----</h1>
-          </form>
         </li>
-        <!-- End li -->
-
       </ul>
+
     </main>
   <!-- end content -->
   </div>
