@@ -7,3 +7,17 @@ superagent localhost:3000/api/scenes post '{"title":"The Clam Bake: Starring Bil
 
 // 2
 superagent localhost:3000/api/scenes post '{"title":"Goofus and the Great Conundrum", "content":["A furry bloke, Goofus was.", "Day in and day out, Goofus would sit for hours hemming and hawing over his beautiful, yet hopelessly snarled fur.", "One day Goofus looked towards the Old Tree for advice on solving his goofy problem."], "choices":[{"sceneId":"a", "displayText":"Goofus explains his problem to the Old Tree."}, {"sceneId":"b", "displayText":"Goofus, out of nervousness, wets his fur."}]}'
+
+// 3 (new schema)
+superagent localhost:3000/api/scenes post '{"title":"Star Wars: The Force Awakens","content":[{"sceneContent":"Use the force, Luke."},{"sceneContent":"Let go, Luke."}],"choices":[{"sceneId":"1","displayText":"Luke uses the force."},{"sceneId":"2","displayText":"Luke lets go."}]}'
+
+{
+  title: String,
+  content: [{
+    sceneContent: String
+  }],
+  choices: [{
+    sceneId: String,
+    displayText: String
+  }]
+}
