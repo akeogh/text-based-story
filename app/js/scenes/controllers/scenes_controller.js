@@ -7,8 +7,24 @@ module.exports = function(app) {
     $scope.errors = [];
     $scope.newScene = {};
     var scenesResource = sceneResource('scenes');
+
     $scope.currentScene = {};
-    $scope.content = ['1', '2'];
+    $scope.currentId = '';
+    $scope.content = [];
+    $scope.choices = [{sceneId: '567713815154713c0b5f0129', displayText: "Play!"}];
+
+
+    $scope.getContent = function(id) {
+      $http.get('/api/scenes/' + id)
+      .then(function(res) {
+        var scene = res.data[0];
+        $scope.currentScene = scene;
+        $scope.content = scene.content;
+        $scope.choices = scene.choices;
+      }, function(err) {
+        console.log(err.data);
+      });
+    }
 
     $scope.getAll = function() {
       scenesResource.getAll(function(err, data) {
