@@ -13,7 +13,7 @@ var appFiles = ['server.js', __dirname + '/routes/**/*.js',
 
 var testFiles = [__dirname + '/test/**/*.js'];
 var htmlFiles = [__dirname + '/app/**/*.html'];
-var cssFiles = ['/app/css/reset.css', '/app/css/base.css', '/app/css/layout.css', '/app/css/modules.css', '/app/css/state.css'];
+var cssFiles = ['app/css/reset.css', 'app/css/base.css', 'app/css/layout.css', 'app/css/modules.css', 'app/css/state.css'];
 
 /* * * * * * * * * * * * * * * * * *
             BUILD TASKS
@@ -51,7 +51,7 @@ gulp.task('css:dev', function() {
   gulp.src(cssFiles)
   .pipe(concatCSS('styles.min.css'))
   .pipe(minifyCSS())
-  .pipe(gulp.dest('/build'));
+  .pipe(gulp.dest('build/'));
 });
 
  /* * * * * * * * * * * * * * * * * *
