@@ -18,7 +18,7 @@ var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000
  */
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === undefined) {
-  //mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/scene_dev');
+  // mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/scene_dev');
   mongoose.connect(process.env.MONGOLAB_URI);
 
 }

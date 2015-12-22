@@ -1,0 +1,35 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+  font-family: 'Slabo 27px', serif;
+}
+
+ul {
+  margin-top: 0;
+}
+
+ul li {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+#logo {
+  text-align: center;
+}
+
+h6 {
+  font-weight: bold;
+}
+
+.form-btn {
+  border-color: #fff;
+}
+
+.form-btn:hover {
+  border-color: #fff;
+  color: #6699ff;
+}
+
+input[type=text] {
+  border: #fff;
+  height: 20px;
+}
