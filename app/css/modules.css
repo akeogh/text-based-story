@@ -1,17 +1,52 @@
 header {
-  background-color: #ddd;
-  text-align: center;
+ background-color: #ddd;
+ text-align: center;
 }
 
 .footer-class {
-  width: 100%;
-  font-size: 16px;
-  background-color: #ddd;
-  color: #5d7b8f;
-  text-align: center;
-  padding: 20px 0px;
-  letter-spacing: 0.09em;
-  position: absolute;
-  bottom: 0;
+ width: 100%;
+ font-size: 16px;
+ background-color: #ddd;
+ color: #5d7b8f ;
+ text-align: center;
+ padding: 20px 0px;
+ letter-spacing: 0.09em;
+ position: absolute;
+ bottom: 0;
 }
 
+.rainy {
+ background-color: #247BA0 ;
+ background: #247BA0 ; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(left,rgba(36,123,160,0),rgba(36,123,160,1)); /*Safari 5.1-6*/
+ background: -o-linear-gradient(right,rgba(36,123,160,0),rgba(36,123,160,1)); /*Opera 11.1-12*/
+ background: -moz-linear-gradient(right,rgba(36,123,160,0),rgba(36,123,160,1)); /*Fx 3.6-15*/
+ background: linear-gradient(to right, rgba(36,123,160,0), rgba(36,123,160,1)); /*Standard*/
+ font-family: "Courier New", Courier, monospace;
+}
+
+.squirrel {
+ background-image: url("img/squirrel.png");
+}
+
+.hydrant {
+ background-image: url("img/hydrant-clipart-fire_hydrant_red.png");
+}
+
+.sunny {
+ background-color: #F3FFBD ;
+ background: #F3FFBD ; /* For browsers that do not support gradients */
+ background: -webkit-linear-gradient(left,rgba(243,255,189,0),rgba(243,255,189,1)); /*Safari 5.1-6*/
+ background: -o-linear-gradient(right,rgba(243,255,189,0),rgba(243,255,189,1)); /*Opera 11.1-12*/
+ background: -moz-linear-gradient(right,rgba(243,255,189,0),rgba(243,255,189,1)); /*Fx 3.6-15*/
+ background: linear-gradient(to right, rgba(243,255,189,0), rgba(243,255,189,1)); /*Standard*/
+ font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.ball {
+ background-image: url("img/tennis_ball_1.png");
+}
+
+.butt {
+ background-image: url("img/dog-sniff.jpeg");
+}
