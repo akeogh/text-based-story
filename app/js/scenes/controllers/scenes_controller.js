@@ -10,8 +10,8 @@ module.exports = function(app) {
 
     $scope.currentScene = {};
     $scope.currentId = '';
-    $scope.content = [];
-    $scope.choices = [{sceneId: '567713815154713c0b5f0129', displayText: "Play!"}];
+    $scope.content = [{sceneContent: 'You are Bear... '}, {sceneContent: 'The dog.'}, {sceneContent: 'Little Susie Sunshine loves to go for walks! Do you? Choose your own adventure!'}];
+    $scope.choices = [{sceneId: '5678b42d812685de1d103fb9', displayText: "Let's Go!"}];
 
 
     $scope.getContent = function(id) {
