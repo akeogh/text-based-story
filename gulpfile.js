@@ -13,7 +13,7 @@ var appFiles = ['server.js', __dirname + '/routes/**/*.js',
 
 var testFiles = [__dirname + '/test/**/*.js'];
 var htmlFiles = [__dirname + '/app/**/*.html'];
-var cssFiles = ['app/css/reset.css', 'app/css/base.css', 'app/css/layout.css', 'app/css/modules.css', 'app/css/state.css', 'app/css/normalize.css', 'app/css/skeleton.css'];
+var cssFiles = ['app/css/reset.css', 'app/css/base.css', 'app/css/layout.css', 'app/css/modules.css', 'app/css/state.css', 'app/css/normalize.css', 'app/css/skeleton.css', 'app/css/form.css'];
 
 /* * * * * * * * * * * * * * * * * *
             BUILD TASKS
