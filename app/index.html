@@ -12,10 +12,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles.min.css">
 </head>
-<body data-ng-app="SceneApp" data-ng-controller="ScenesController">
+<body data-ng-app="SceneApp" data-ng-controller="ScenesController" data-ng-class="classes">
   <header-directive></header-directive>
-  <content-directive data-content="content" data-choices="choices"></content-directive>
-  <choices-directive data-choices="choices" data-get-content="getContent(id)"></choices-directive>
+
+    <content-directive data-content="content" data-choices="choices"></content-directive>
+    <choices-directive data-choices="choices" data-get-content="getContent(id)"></choices-directive>
+
   <footer-directive></footer-directive>
   <script src="bundle.js"></script>
 </body>
