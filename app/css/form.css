@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ul {
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
 ul li {
@@ -12,12 +13,13 @@ ul li {
   margin-bottom: 0;
 }
 
-#logo {
-  text-align: center;
-}
-
 h6 {
   font-weight: bold;
+}
+
+input[type=text] {
+  border: #fff;
+  height: 30px;
 }
 
 .form-btn {
@@ -29,7 +31,6 @@ h6 {
   color: #6699ff;
 }
 
-input[type=text] {
-  border: #fff;
-  height: 20px;
+#logo {
+  text-align: center;
 }

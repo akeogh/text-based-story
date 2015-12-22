@@ -39,16 +39,12 @@
               <ul>
                 <h6>Content</h6>
                 <li data-ng-repeat="content in scene.content">
-                  <ul>
-                    <li data-ng-repeat="sceneContent in content">{{sceneContent}}</li>
-                  </ul>
+                  • {{content.sceneContent}}
                 </li>
 
                 <h6>Choices</h6>
-                <li data-ng-repeat="choices in scene.choices">
-                  <ul>
-                    <li data-ng-repeat="items in choices">{{items}}</li>
-                  </ul>
+                <li data-ng-repeat="choice in scene.choices">
+                  • {{choice.displayText}}
                 </li>
 
                 <!-- BUTTONS -->
