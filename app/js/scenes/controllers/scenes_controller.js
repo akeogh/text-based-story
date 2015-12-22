@@ -12,6 +12,7 @@ module.exports = function(app) {
     $scope.currentId = '';
     $scope.content = [{sceneContent: 'You are Bear... '}, {sceneContent: 'The dog.'}, {sceneContent: 'Little Susie Sunshine loves to go for walks! Do you? Choose your own adventure!'}];
     $scope.choices = [{sceneId: '5678b42d812685de1d103fb9', displayText: "Let's Go!"}];
+    $scope.classes = "";
 
 
     $scope.getContent = function(id) {
@@ -21,6 +22,9 @@ module.exports = function(app) {
         $scope.currentScene = scene;
         $scope.content = scene.content;
         $scope.choices = scene.choices;
+        if (scene.sceneClass) {
+          $scope.classes = $scope.classes + scene.sceneClass + " ";
+        }
       }, function(err) {
         console.log(err.data);
       });

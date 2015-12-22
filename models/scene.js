@@ -10,7 +10,8 @@ var sceneSchema = new mongoose.Schema({
   choices: [{
     sceneId: String,
     displayText: String
-  }]
+  }],
+  sceneClass: String
 });
 
 module.exports = exports = mongoose.model("Scene", sceneSchema);
