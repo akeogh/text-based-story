@@ -3,7 +3,7 @@ var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect
 
-process.env.MONGOLAB_URI = 'mongodb://localhost/scene_dev';
+process.env.NODE_ENV = 'test';
 require(__dirname + '/../server');
 var mongoose = require('mongoose');
 var Scene = require(__dirname + '/../models/scene');
