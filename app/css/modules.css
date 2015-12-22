@@ -1,6 +1,11 @@
 header {
  background-color: #ddd;
  text-align: center;
+ padding: 1em;
+}
+
+html, body {
+  height: 100%;
 }
 
 .footer-class {
@@ -15,6 +20,13 @@ header {
  bottom: 0;
 }
 
+.story-container {
+  width: 30%;
+  margin: 2em;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1em;
+}
+
 .rainy {
  background-color: #247BA0 ;
  background: #247BA0 ; /* For browsers that do not support gradients */
@@ -27,10 +39,12 @@ header {
 
 .squirrel {
  background-image: url("img/squirrel.png");
+ background-size: 90%
 }
 
-.hydrant {
- background-image: url("img/hydrant-clipart-fire_hydrant_red.png");
+.hydrant{
+ background-image: url("img/fire_hydrant_red.png");
+ background-size: 20%;
 }
 
 .sunny {
@@ -48,5 +62,10 @@ header {
 }
 
 .butt {
- background-image: url("img/dog-sniff.jpeg");
+ background-image: url("img/dog-sniff.jpg");
+}
+
+.hydrant, .ball, .butt {
+  background-repeat: no-repeat;
+  background-position: center;
 }
