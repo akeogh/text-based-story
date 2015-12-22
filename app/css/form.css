@@ -18,8 +18,12 @@ h6 {
 }
 
 input[type=text] {
-  border: #fff;
   height: 30px;
+  width: 100%;
+}
+
+.btn-container {
+  text-align: center;
 }
 
 .form-btn {
@@ -29,6 +33,10 @@ input[type=text] {
 .form-btn:hover {
   border-color: #fff;
   color: #6699ff;
+}
+
+.schema-contents {
+  border-bottom: 1px solid #000;
 }
 
 #logo {
