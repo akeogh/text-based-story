@@ -29,9 +29,10 @@
           <i class="fa fa-plus"></i>
         </button>
       </form> -->
+
       <!-- Scene List -->
       <ul id="sceneList">
-        <li data-ng-repeat="scene in scenes">
+        <li class="schema-contents"data-ng-repeat="scene in scenes">
           <div class="row">
             <div class="six columns">
               <h6>Title</h6>
@@ -48,13 +49,15 @@
                 </li>
 
                 <!-- BUTTONS -->
-                <button class="form-btn" data-ng-if="!scene.editing" data-ng-click="remove(scene)">
-                  <i class="fa fa-trash"></i>
-                </button>
+                <div class="btn-container">
+                  <button class="form-btn" data-ng-if="!scene.editing" data-ng-click="remove(scene)">
+                    <i class="fa fa-trash"></i>
+                  </button>
 
-                <button class="form-btn" data-ng-if="!scene.editing" data-ng-click="save(scene)">
-                  <i class="fa fa-pencil"></i>
-                </button>
+                  <button class="form-btn" data-ng-if="!scene.editing" data-ng-click="save(scene)">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                </div>
               </ul>
             </div> <!-- column end -->
 
