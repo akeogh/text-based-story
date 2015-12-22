@@ -2,7 +2,7 @@
   "name": "text-based-story",
   "version": "1.0.0",
   "engines": {
-    "node": "0.12.7",
+    "node": "0.12.7"
   },
   "description": "an atmospheric story adventure!",
   "main": "server.js",
