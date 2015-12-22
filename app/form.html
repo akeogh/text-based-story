@@ -16,20 +16,6 @@
     <h1 id="logo">Scenes</h1>
     <main data-ng-controller="ScenesController" data-ng-init="getAll()">
 
-      <!-- New List Item Form -->
-<!--       <h3>New Scene</h3>
-      <form name="newSceneForm" data-ng-submit="create(newScene)">
-        <input type="text" id="newSceneTitle" placeholder="Add a new title" require data-ng-model="newScene.title">
-        <br>
-        <input type="text" id="newSceneContent" placeholder="Add content" require data-ng-model="newScene.content">
-        <br>
-        <input type="text" placeholder="Add new choice" require data-ng-model="newScene.choices[0].displayText">
-
-        <button type="submit" data-ng-disabled="newSceneForm.$invalid">
-          <i class="fa fa-plus"></i>
-        </button>
-      </form> -->
-
       <!-- Scene List -->
       <ul id="sceneList">
         <li class="schema-contents"data-ng-repeat="scene in scenes">
@@ -47,6 +33,9 @@
                 <li data-ng-repeat="choice in scene.choices">
                   • {{choice.displayText}}
                 </li>
+
+                <h6>Class</h6>
+                <span>{{scene.sceneClass}}</span>
 
                 <!-- BUTTONS -->
                 <div class="btn-container">
@@ -83,6 +72,9 @@
                         <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.sceneId"></input>
                         <input type="text" id="sceneForm{{scene._id}}" data-ng-model="choice.displayText"></input>
                       </li>
+
+                      <h6>Edit Class</h6>
+                      <input type="text" id="sceneForm{{scene.id}}" data-ng-model="scene.sceneClass"></input>
 
                       <!-- OK/CANCEL -->
                       <button class="form-btn" type="submit">OK</button>
